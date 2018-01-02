@@ -73,27 +73,66 @@ class FmScale extends BaseFmShape {
 }
 
 class FmText extends BaseFmShape {
-    private float x,y;
+    private float x, y;
+    private int textSize, redTextSize;
+    Typeface redTextType;
     private int status;
+    private String text;
 
-    /**
-     *  红色变大字体
-     */
-    public static final int STATUS_ON = 1;
     /**
      * 默认色
      */
     public static final int STATUS_OFF = 0;
+    private final int normal = Color.parseColor("#909aa9");
+    private Paint textPaint;
+    /**
+     * 红色变大字体
+     */
+    public static final int STATUS_ON = 1;
+    private final int red = Color.parseColor("#F27D73");
 
-    public FmText(float x, float y) {
+    public FmText(float x, float y, int textSize, int redTextSize, Typeface redTextType) {
         this.x = x;
         this.y = y;
+        this.textSize = textSize;
+        this.redTextSize = redTextSize;
+        this.redTextType = redTextType;
         this.status = STATUS_OFF;
+
+        this.textPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        textPaint.setFakeBoldText(true);
+        textPaint.setTextAlign(Paint.Align.CENTER);
     }
 
     @Override
     void draw(Canvas canvas) {
+        if (text != null) {
+            if (this.status == STATUS_OFF) {
+                textPaint.setColor(normal);
+                textPaint.setTextSize(textSize);
+            } else {
+                textPaint.setColor(red);
+                textPaint.setTextSize(redTextSize);
+                textPaint.setTypeface(redTextType);
+            }
+            canvas.drawText(text, x, y, textPaint);
+        }
+    }
 
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
     }
 }
 

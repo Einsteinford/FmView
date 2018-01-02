@@ -11,9 +11,11 @@ import android.graphics.LinearGradient;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Shader;
+import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
+import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
@@ -26,6 +28,7 @@ import com.einstinford.fmview.bean.FmInfo;
 
 import org.greenrobot.eventbus.EventBus;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Vector;
 
@@ -77,6 +80,7 @@ public class FmView extends SurfaceView {
     private float mDefaultTop = BaseData.ScreenWidth * 0.067f;
 
     private Context cxt;
+    //TODO  修改为观察者模式，最好有before和after两种状态
     public static int sFmPosition;
     private Vector<BaseFmShape> mShapes;
     private BaseFmAnim mWheel;
@@ -147,6 +151,9 @@ public class FmView extends SurfaceView {
     private void init() {
         //关闭硬件加速
         this.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+
+//        getHolder().addCallback(callback);
+
         setBackgroundResource(R.drawable.view_fm_bg);
 //        setBackgroundColor(getResources().getColor(android.R.color.transparent));
 
@@ -211,20 +218,20 @@ public class FmView extends SurfaceView {
         mShapes.add(mWheel);
     }
 
-    //TODO setTextSize的值之后再改
+    /**
+     * 新建10个刻度，每一个刻度单独绘画
+     */
     private void initRadioText() {
         float textY = BaseData.ScreenWidth * 0.26f;
         int textSize = 10;
-        BaseFmShape[] fmTexts = new BaseFmShape[textSize];
+        FmText[] fmTexts = new FmText[textSize];
         for (int i = 0; i < textSize; i++) {
-            fmTexts[i] = new FmText(defaultDistance + mLongScale * i, textY);
+            fmTexts[i] = new FmText(defaultDistance + mLongScale * i, textY,
+                    cxt.getResources().getDimensionPixelSize(R.dimen.base_text_size_11),
+                    cxt.getResources().getDimensionPixelSize(R.dimen.base_text_size_18),
+                    Typeface.createFromAsset(getContext().getAssets(), "Ubuntu-C.ttf"));
         }
-
-//        BaseFmShape redioText = new FmText(cxt.getResources().getDimensionPixelSize(R.dimen.base_text_size_11),
-//                cxt.getResources().getDimensionPixelSize(R.dimen.base_text_size_18),
-//                BaseData.ScreenWidth,
-//                Typeface.createFromAsset(getContext().getAssets(), "Ubuntu-C.ttf"));
-//        mShapes.add(redioText);
+        Collections.addAll(mShapes, fmTexts);
     }
 
     private void initFontBg() {
@@ -290,6 +297,30 @@ public class FmView extends SurfaceView {
 //        addView(mTvDes, desLp);
     }
 
+    SurfaceHolder.Callback callback = new SurfaceHolder.Callback() {
+        @Override
+        public void surfaceCreated(SurfaceHolder surfaceHolder) {
+            redraw();
+        }
+
+        @Override
+        public void surfaceChanged(SurfaceHolder surfaceHolder, int i, int i1, int i2) {
+//            WIDTH = i1 / (COL + 2);   //根据实际设备屏幕宽度，重新修改圆圈大小
+            redraw();       //刷新页面
+        }
+
+        @Override
+        public void surfaceDestroyed(SurfaceHolder surfaceHolder) {
+
+        }
+    };
+
+    public void redraw() {
+        //锁定画图
+//        Canvas c = getHolder().lockCanvas();
+        //结束锁定画图，并提交改变。
+//        getHolder().unlockCanvasAndPost(c);
+    }
 
     @Override
     protected void onDraw(Canvas canvas) {
@@ -411,6 +442,7 @@ public class FmView extends SurfaceView {
                 }
                 break;
             case MotionEvent.ACTION_UP:
+                redraw();       //图像刷新
                 if (mAnimator != null && mFmList != null) {
                     mWheel.startAnim();
                     if (event.getX() - mTouchDownX > mLongScale / 2) {
