@@ -1,0 +1,94 @@
+{
+  "ret_result": {
+    "ret_code": 1,
+    "ret_message": "成功"
+  },
+  "list": {
+    "totalcount": "10",
+    "count": "10",
+    "pageindex": "1",
+    "pagecount": "1",
+    "item": [
+      {
+        "id": 2,
+        "name": "省台",
+        "largeicon": "",
+        "smallicon": "",
+        "thumbicon": "",
+        "level": 2
+      },
+      {
+        "id": 5,
+        "name": "黄石",
+        "largeicon": "",
+        "smallicon": "",
+        "thumbicon": "",
+        "level": 3
+      },
+      {
+        "id": 6,
+        "name": "十堰",
+        "largeicon": "",
+        "smallicon": "",
+        "thumbicon": "",
+        "level": 3
+      },
+      {
+        "id": 8,
+        "name": "襄阳",
+        "largeicon": "",
+        "smallicon": "",
+        "thumbicon": "",
+        "level": 3
+      },
+      {
+        "id": 9,
+        "name": "鄂州",
+        "largeicon": "",
+        "smallicon": "",
+        "thumbicon": "",
+        "level": 3
+      },
+      {
+        "id": 10,
+        "name": "荆门",
+        "largeicon": "",
+        "smallicon": "",
+        "thumbicon": "",
+        "level": 3
+      },
+      {
+        "id": 11,
+        "name": "孝感",
+        "largeicon": "",
+        "smallicon": "",
+        "thumbicon": "",
+        "level": 3
+      },
+      {
+        "id": 13,
+        "name": "黄冈",
+        "largeicon": "",
+        "smallicon": "",
+        "thumbicon": "",
+        "level": 3
+      },
+      {
+        "id": 17,
+        "name": "随州",
+        "largeicon": "",
+        "smallicon": "",
+        "thumbicon": "",
+        "level": 3
+      },
+      {
+        "id": 20,
+        "name": "恩施",
+        "largeicon": "",
+        "smallicon": "",
+        "thumbicon": "",
+        "level": 3
+      }
+    ]
+  }
+}
