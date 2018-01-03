@@ -110,6 +110,7 @@ class FmText extends BaseFmShape {
             if (this.status == STATUS_OFF) {
                 textPaint.setColor(normal);
                 textPaint.setTextSize(textSize);
+                textPaint.setTypeface(Typeface.DEFAULT);
             } else {
                 textPaint.setColor(red);
                 textPaint.setTextSize(redTextSize);
@@ -135,61 +136,3 @@ class FmText extends BaseFmShape {
         this.text = text;
     }
 }
-
-//class FmText extends BaseFmShape implements DrawText{
-//    //TODO 职责太多
-//
-//    private Paint mTextPaint;
-//    private Paint mRedTextPaint;
-//    /**
-//     * 默认刻度两侧边距
-//     */
-//    private float defaultDistance;
-//    private float mLongScale;
-//    private float mTextY;
-//
-//    public FmText(int textSize, int redTextSize, int screenWidth, Typeface redTextType) {
-//        defaultDistance = screenWidth * 8 / 75;
-//        mLongScale = (screenWidth - (defaultDistance * 2)) / 9;
-//        mTextY = screenWidth * 0.26f;
-//
-//        mTextPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-//        mTextPaint.setColor(Color.parseColor("#909aa9"));
-//        mTextPaint.setTextSize(textSize);
-//        mTextPaint.setFakeBoldText(true);
-//        mTextPaint.setTextAlign(Paint.Align.CENTER);
-//
-//        mRedTextPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-//        mRedTextPaint.setColor(Color.parseColor("#F27D73"));
-//        mRedTextPaint.setTextSize(redTextSize);
-//        mRedTextPaint.setFakeBoldText(true);
-//        //使用自定义字体
-//        mRedTextPaint.setTypeface(redTextType);
-//        mRedTextPaint.setTextAlign(Paint.Align.CENTER);
-//
-//    }
-//
-//    @Override
-//    void draw(Canvas canvas) {
-//            if (i == sFmPosition) {
-//                canvas.drawText(mFmList.get(i).mhz,
-//                        defaultDistance + mLongScale * i, mTextY,
-//                        mRedTextPaint);
-//            } else {
-//                canvas.drawText(mFmList.get(i).mhz,
-//                        defaultDistance + mLongScale * i, mTextY,
-//                        mTextPaint);
-//            }
-//
-//        }
-//
-//    @Override
-//    public void drawText(String text, boolean isRed) {
-//
-//    }
-//}
-//}
-//
-//interface DrawText{
-//  void drawText(String text,boolean isRed);
-//}

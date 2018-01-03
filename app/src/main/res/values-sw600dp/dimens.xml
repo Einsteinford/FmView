@@ -1,0 +1,249 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">48dp</dimen>
+    <dimen name="activity_vertical_margin">48dp</dimen>
+    <dimen name="activity_interaction_height">1029dp</dimen>
+    <dimen name="activity_interaction_heighttwo">567dp</dimen>
+    <dimen name="activity_interaction_heightone">798dp</dimen>
+    <dimen name="activity_interaction_title">144dp</dimen>
+    <dimen name="default_padding">45dp</dimen>
+
+    <dimen name="base_title_bar_height">172dp</dimen>
+    <dimen name="base_title_height">147dp</dimen>
+    <dimen name="base_title_margin_top">25dp</dimen>
+
+    <!-- 字体乘2.5倍-->
+    <dimen name="base_text_size_5">12.5sp</dimen>
+    <dimen name="base_text_size_6">15sp</dimen>
+    <dimen name="base_text_size_8">20sp</dimen>
+    <dimen name="base_text_size_9">22.5sp</dimen>
+    <dimen name="base_text_size_10">25sp</dimen>
+    <dimen name="base_text_size_11">27.5sp</dimen>
+    <dimen name="base_text_size_12">30sp</dimen>
+    <dimen name="base_text_size_13">32.5sp</dimen>
+    <dimen name="base_text_size_14">35sp</dimen>
+    <dimen name="base_text_size_15">37.5sp</dimen>
+    <dimen name="base_text_size_16">40sp</dimen>
+    <dimen name="base_text_size_17">42.5sp</dimen>
+    <dimen name="base_text_size_18">45sp</dimen>
+    <dimen name="base_text_size_20">50sp</dimen>
+    <dimen name="base_text_size_21">52.5sp</dimen>
+    <dimen name="base_text_size_45">112.5sp</dimen>
+    <dimen name="base_text_size_50">125sp</dimen>
+
+    <integer name="fm_text_size_10">25</integer>
+    <integer name="fm_text_size_12">30</integer>
+    <integer name="fm_text_size_15">38</integer>
+    <dimen name="fm_text_size_10">20</dimen>
+    <dimen name="fm_text_size_12">24</dimen>
+    <dimen name="fm_text_size_15">30</dimen>
+
+    <dimen name="base_f_50">-150dp</dimen>
+    <dimen name="base_f_2">-6dp</dimen>
+    <dimen name="base_f_3">-9dp</dimen>
+    <dimen name="base_0">0dp</dimen>
+    <dimen name="base_0.1">0.3dp</dimen>
+    <dimen name="base_0.3">0.9dp</dimen>
+    <dimen name="base_0.5">1.5dp</dimen>
+    <dimen name="base_1">3dp</dimen>
+    <dimen name="base_1.5">4.5dp</dimen>
+    <dimen name="base_2">6dp</dimen>
+    <dimen name="base_2.5">7.5dp</dimen>
+    <dimen name="base_3">9dp</dimen>
+    <dimen name="base_4">12dp</dimen>
+    <dimen name="base_5">15dp</dimen>
+    <dimen name="base_6">18dp</dimen>
+    <dimen name="base_7">21dp</dimen>
+    <dimen name="base_8">24dp</dimen>
+    <dimen name="base_9">27dp</dimen>
+    <dimen name="base_10">30dp</dimen>
+    <dimen name="base_11">33dp</dimen>
+    <dimen name="base_12">36dp</dimen>
+    <dimen name="base_13">39dp</dimen>
+    <dimen name="base_14">42dp</dimen>
+    <dimen name="base_15">45dp</dimen>
+    <dimen name="base_16">48dp</dimen>
+    <dimen name="base_17">51dp</dimen>
+    <dimen name="base_18">54dp</dimen>
+    <dimen name="base_19">57dp</dimen>
+    <dimen name="base_20">60dp</dimen>
+    <dimen name="base_21">63dp</dimen>
+    <dimen name="base_23">69dp</dimen>
+    <dimen name="base_24">72dp</dimen>
+    <dimen name="base_25">75dp</dimen>
+    <dimen name="base_26">78dp</dimen>
+    <dimen name="base_27">81dp</dimen>
+    <dimen name="base_28">84dp</dimen>
+    <dimen name="base_29">87dp</dimen>
+    <dimen name="base_30">90dp</dimen>
+    <dimen name="base_31">93dp</dimen>
+    <dimen name="base_32">96dp</dimen>
+    <dimen name="base_33">99dp</dimen>
+    <dimen name="base_34">102dp</dimen>
+    <dimen name="base_35">105dp</dimen>
+    <dimen name="base_36">108dp</dimen>
+    <dimen name="base_37">111dp</dimen>
+    <dimen name="base_38">114dp</dimen>
+    <dimen name="base_39">117dp</dimen>
+    <dimen name="base_40">120dp</dimen>
+    <dimen name="base_41">123dp</dimen>
+    <dimen name="base_42">126dp</dimen>
+    <dimen name="base_43">129dp</dimen>
+    <dimen name="base_44">132dp</dimen>
+    <dimen name="base_45">135dp</dimen>
+    <dimen name="base_46">138dp</dimen>
+    <dimen name="base_47">141dp</dimen>
+    <dimen name="base_48">144dp</dimen>
+    <dimen name="base_49">147dp</dimen>
+    <dimen name="base_50">150dp</dimen>
+    <dimen name="base_51">153dp</dimen>
+    <dimen name="base_53">159dp</dimen>
+    <dimen name="base_54">162dp</dimen>
+    <dimen name="base_55">165dp</dimen>
+    <dimen name="base_58">174dp</dimen>
+    <dimen name="base_60">180dp</dimen>
+    <dimen name="base_61">183dp</dimen>
+    <dimen name="base_62">186dp</dimen>
+    <dimen name="base_63">189dp</dimen>
+    <dimen name="base_64">192dp</dimen>
+    <dimen name="base_65">195dp</dimen>
+    <dimen name="base_70">210dp</dimen>
+    <dimen name="base_71">213dp</dimen>
+    <dimen name="base_74">222dp</dimen>
+    <dimen name="base_75">225dp</dimen>
+    <dimen name="base_80">240dp</dimen>
+    <dimen name="base_81">243dp</dimen>
+    <dimen name="base_82">246dp</dimen>
+    <dimen name="base_90">270dp</dimen>
+    <dimen name="base_91">273dp</dimen>
+    <dimen name="base_93">279dp</dimen>
+    <dimen name="base_100">300dp</dimen>
+    <dimen name="base_101">303dp</dimen>
+    <dimen name="base_110">330dp</dimen>
+    <dimen name="base_120">360dp</dimen>
+    <dimen name="base_121">363dp</dimen>
+    <dimen name="base_125">375dp</dimen>
+    <dimen name="base_130">390dp</dimen>
+    <dimen name="base_133">399dp</dimen>
+    <dimen name="base_134">402dp</dimen>
+    <dimen name="base_150">450dp</dimen>
+    <dimen name="base_151">453dp</dimen>
+    <dimen name="base_160">480dp</dimen>
+    <dimen name="base_166">498dp</dimen>
+    <dimen name="base_180">540dp</dimen>
+    <dimen name="base_190">570dp</dimen>
+    <dimen name="base_200">600dp</dimen>
+    <dimen name="base_201">603dp</dimen>
+    <dimen name="base_211">633dp</dimen>
+    <dimen name="base_219">657dp</dimen>
+    <dimen name="base_220">360dp</dimen>
+    <dimen name="base_230">690dp</dimen>
+    <dimen name="base_233">699dp</dimen>
+    <dimen name="base_240">720dp</dimen>
+    <dimen name="base_250">750dp</dimen>
+    <dimen name="base_252">756dp</dimen>
+    <dimen name="base_258">774dp</dimen>
+    <dimen name="base_260">780dp</dimen>
+    <dimen name="base_266">798dp</dimen>
+    <dimen name="base_270">810dp</dimen>
+    <dimen name="base_280">840dp</dimen>
+    <dimen name="base_297">891dp</dimen>
+    <dimen name="base_320">960dp</dimen>
+    <dimen name="base_440">1320dp</dimen>
+
+    <dimen name="base_drawable_padding_4">12dp</dimen>
+    <dimen name="base_icon_round_5">15dp</dimen>
+    <dimen name="base_icon_round_3">9dp</dimen>
+    <dimen name="base_rounding_border_width">0.3dp</dimen>
+
+    <!-- PullToRefreshGridview -->
+    <dimen name="indicator_right_padding">20dp</dimen>
+    <dimen name="indicator_corner_radius">36dp</dimen>
+    <dimen name="indicator_internal_padding">12dp</dimen>
+    <dimen name="header_footer_left_right_padding">75dp</dimen>
+    <dimen name="header_footer_top_bottom_padding">30dp</dimen>
+    <dimen name="max_head_height">100dp</dimen>
+    <dimen name="max_bottom_height">120dp</dimen>
+
+    <dimen name="player_title_margin">165.0dip</dimen>
+    <dimen name="player_title_padding_left">18.0dip</dimen>
+    <dimen name="player_title_padding_right">9.0dip</dimen>
+
+    <dimen name="design_navigation_separator_vertical_padding">0dp</dimen>
+    <dimen name="recommend_normal_item_width">330dp</dimen>
+    <dimen name="recommend_anchor_item_height">360dp</dimen>
+    <dimen name="recommend_ad_item_width_height">150dp</dimen>
+    <dimen name="recommend_banner_item_height">540dp</dimen>
+    <dimen name="recommend_ver_item_width">300dp</dimen>
+    <dimen name="recommend_ver_item_height">180dp</dimen>
+    <dimen name="recommend_hor_video_item_width">504dp</dimen>
+    <dimen name="recommend_hor_video_item_height">300dp</dimen>
+    <dimen name="category_top_fm_item_width">327dp</dimen>
+    <dimen name="category_top_fm_item_big_height">327dp</dimen>
+    <dimen name="category_top_fm_item_small_height">159dp</dimen>
+    <dimen name="category_top_fm_item_margin_bottom">9dp</dimen>
+    <dimen name="category_hot_item_width_height">240dp</dimen>
+
+    <dimen name="design_navigation_icon_size">48dp</dimen>
+    <dimen name="load_more_view_height">90dp</dimen>
+    <dimen name="anchor_show_scroll_height">498dp</dimen>
+
+    <dimen name="search_history_item_width">480dp</dimen>
+    <dimen name="search_history_item_height">90dp</dimen>
+    <dimen name="search_history_item_padding">30dp</dimen>
+    <dimen name="album_detail_send_msg_layout_height">132dp</dimen>
+    <dimen name="profile_video_list_height">240dp</dimen>
+    <dimen name="profile_classify_padding">15dp</dimen>
+    <dimen name="profile_video_list_view_height">3dp</dimen>
+
+    <dimen name="anchor_ad_height">270dp</dimen>
+    <dimen name="anchor_live_height">300dp</dimen>
+
+    <dimen name="profile_ad_height">384dp</dimen>
+    <dimen name="profile_class_item_width_height">498dp</dimen>
+
+    <dimen name="category_banner_height">270dp</dimen>
+
+    <!--- home -->
+    <dimen name="home_rg_title_width">630dp</dimen>
+    <dimen name="home_rg_title_height">78dp</dimen>
+    <dimen name="home_rb_width">210dp</dimen>
+    <dimen name="home_user_header_width_height">93dp</dimen>
+    <dimen name="home_iv_search_width">114dp</dimen>
+    <dimen name="home_seek_bar_height">6dp</dimen>
+    <dimen name="home_rl_play_height">165dp</dimen>
+    <dimen name="home_play_cover_width_height">120dp</dimen>
+
+    <!-- recommend -->
+    <dimen name="hor_ad_text_max_width">150dp</dimen>
+    <dimen name="anchor_name_max_width">300dp</dimen>
+    <dimen name="recommend_ad_height">270dp</dimen>
+    <dimen name="recommend_video_time_height">48dp</dimen>
+
+    <!--方言二级界面 -->
+    <dimen name="local_head_cover">960dp</dimen>
+    <dimen name="local_head_height174">522dp</dimen>
+    <dimen name="local_head_magintop">75dp</dimen>
+    <dimen name="local_head_persionheeight">144dp</dimen>
+    <dimen name="local_head_height45">135dp</dimen>
+    <dimen name="local_center_height40">120dp</dimen>
+    <dimen name="local_center_height160">480dp</dimen>
+    <dimen name="local_center_height90">270dp</dimen>
+    <dimen name="local_center_height80">240dp</dimen>
+    <dimen name="local_center_height3">9dp</dimen>
+    <dimen name="local_padding_11">33dp</dimen>
+    <dimen name="local_padding_4">12.0dp</dimen>
+    <dimen name="local_padding_7">21dp</dimen>
+    <dimen name="local_padding_0">0dp</dimen>
+    <dimen name="local_padding_19">57dp</dimen>
+    <dimen name="local_padding_5">15dp</dimen>
+    <dimen name="local_padding_15">45dp</dimen>
+    <dimen name="local_padding_14">42dp</dimen>
+    <dimen name="local_padding_20">60dp</dimen>
+    <dimen name="local_padding_30">90dp</dimen>
+    <dimen name="local_padding_31">93dp</dimen>
+    <dimen name="local_padding_1">3dp</dimen>
+    <dimen name="local_padding_2">6dp</dimen>
+
+</resources>

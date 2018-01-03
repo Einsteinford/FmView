@@ -32,6 +32,13 @@
     <dimen name="base_text_size_45">45sp</dimen>
     <dimen name="base_text_size_50">50sp</dimen>
 
+    <integer name="fm_text_size_10">10</integer>
+    <integer name="fm_text_size_12">12</integer>
+    <integer name="fm_text_size_15">15</integer>
+    <dimen name="fm_text_size_10">10</dimen>
+    <dimen name="fm_text_size_12">12</dimen>
+    <dimen name="fm_text_size_15">15</dimen>
+
     <dimen name="base_f_50">-50dp</dimen>
     <dimen name="base_f_2">-2dp</dimen>
     <dimen name="base_f_3">-3dp</dimen>

@@ -82,8 +82,11 @@ public class FmView extends SurfaceView {
     private Context cxt;
     //TODO  修改为观察者模式，最好有before和after两种状态
     public static int sFmPosition;
+    private PointerPositionListener mPositionListener;
     private Vector<BaseFmShape> mShapes;
     private BaseFmAnim mWheel;
+    private FmText[] mFmTexts;
+    private int mTextMaxSize = 10;
 
     public FmView(Context context) {
         this(context, null);
@@ -99,9 +102,17 @@ public class FmView extends SurfaceView {
         init();
     }
 
+    public void setPositionListener(PointerPositionListener positionListener) {
+        mPositionListener = positionListener;
+    }
+
     public void setFmList(@NonNull List<FmInfo> fmList) {
         mFmList = fmList;
-
+        if (mFmTexts != null) {
+            for (int i = 0; i < (mFmList.size() > mTextMaxSize ? mTextMaxSize : mFmList.size()); i++) {
+                mFmTexts[i].setText(mFmList.get(i).getMhz());
+            }
+        }
 //        交由外部处理点击
 //        mBtnSwitch.setOnClickListener(this);
 
@@ -128,6 +139,9 @@ public class FmView extends SurfaceView {
 //            mTvTitle.setText(mFmList.get(sFmPosition).title);
 //            mTvDes.setText(mFmList.get(sFmPosition).shortdesc);
         } else {
+            if (mPositionListener != null) {
+                mPositionListener.beforeChange();
+            }
             pointToZero();
         }
 //        invalidate();
@@ -139,6 +153,9 @@ public class FmView extends SurfaceView {
 
     private void positionChanged() {
         EventBus.getDefault().post(new EventManager.FmChannelChangeEvent());
+        if (mPositionListener != null) {
+            mPositionListener.afterChange();
+        }
         if (!mFmList.isEmpty()) {
 //            mTvTitle.setText(mFmList.get(sFmPosition).title);
 //            mTvDes.setText(mFmList.get(sFmPosition).shortdesc);
@@ -153,7 +170,17 @@ public class FmView extends SurfaceView {
         this.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
 
 //        getHolder().addCallback(callback);
+        setPositionListener(new PointerPositionListener() {
+            @Override
+            public void beforeChange() {
+                mFmTexts[sFmPosition].setStatus(FmText.STATUS_OFF);
+            }
 
+            @Override
+            public void afterChange() {
+                mFmTexts[sFmPosition].setStatus(FmText.STATUS_ON);
+            }
+        });
         setBackgroundResource(R.drawable.view_fm_bg);
 //        setBackgroundColor(getResources().getColor(android.R.color.transparent));
 
@@ -223,15 +250,16 @@ public class FmView extends SurfaceView {
      */
     private void initRadioText() {
         float textY = BaseData.ScreenWidth * 0.26f;
-        int textSize = 10;
-        FmText[] fmTexts = new FmText[textSize];
-        for (int i = 0; i < textSize; i++) {
-            fmTexts[i] = new FmText(defaultDistance + mLongScale * i, textY,
+
+        mFmTexts = new FmText[mTextMaxSize];
+        for (int i = 0; i < mTextMaxSize; i++) {
+            mFmTexts[i] = new FmText(defaultDistance + mLongScale * i, textY,
                     cxt.getResources().getDimensionPixelSize(R.dimen.base_text_size_11),
                     cxt.getResources().getDimensionPixelSize(R.dimen.base_text_size_18),
                     Typeface.createFromAsset(getContext().getAssets(), "Ubuntu-C.ttf"));
         }
-        Collections.addAll(mShapes, fmTexts);
+        mFmTexts[sFmPosition].setStatus(FmText.STATUS_ON);
+        Collections.addAll(mShapes, mFmTexts);
     }
 
     private void initFontBg() {
@@ -326,20 +354,6 @@ public class FmView extends SurfaceView {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (mPaintPointer != null) {
-//            if (mFmList != null) {
-//                for (int i = 0; i < mFmList.size(); i++) {
-//                    if (i == sFmPosition) {
-//                        canvas.drawText(mFmList.get(i).mhz,
-//                                defaultDistance + mLongScale * i, BaseData.ScreenWidth * 0.26f,
-//                                mRedTextPaint);
-//                    } else {
-//                        canvas.drawText(mFmList.get(i).mhz,
-//                                defaultDistance + mLongScale * i, BaseData.ScreenWidth * 0.26f,
-//                                mTextPaint);
-//                    }
-//
-//                }
-//            }
             for (BaseFmShape shape : mShapes) {
                 shape.draw(canvas);
             }
@@ -352,7 +366,6 @@ public class FmView extends SurfaceView {
 
             canvas.drawLine(defaultDistance + progress, mDefaultTop,
                     defaultDistance + progress, BaseData.ScreenWidth * 0.33f, mPaintPointer);
-
 
         }
     }
@@ -445,6 +458,9 @@ public class FmView extends SurfaceView {
                 redraw();       //图像刷新
                 if (mAnimator != null && mFmList != null) {
                     mWheel.startAnim();
+                    if (mPositionListener != null) {
+                        mPositionListener.beforeChange();
+                    }
                     if (event.getX() - mTouchDownX > mLongScale / 2) {
                         if (sFmPosition == mFmList.size() - 1) {
                             pointToZero();
@@ -486,5 +502,11 @@ public class FmView extends SurfaceView {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 
         setMeasuredDimension(BaseData.ScreenWidth, ViewHeight); //填写屏幕像素，高度由宽度乘以系数
+    }
+
+    protected interface PointerPositionListener {
+        void beforeChange();
+
+        void afterChange();
     }
 }
