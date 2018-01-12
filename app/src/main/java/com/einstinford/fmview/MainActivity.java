@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -34,8 +35,9 @@ public class MainActivity extends AppCompatActivity {
         TextView textView = (TextView) findViewById(R.id.textView);
 
         FmView fmView = new FmView(MainActivity.this);
+        ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(BaseData.ScreenWidth, FmView.ViewHeight);
+        root.addView(fmView, layoutParams);
 
-        root.addView(fmView);
         try {
             String jsonData = new String(getAssetsFile(MainActivity.this, "fminfo.json"));
             ResultBean result = JSON.parseObject(jsonData, ResultBean.class);
