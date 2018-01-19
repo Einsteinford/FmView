@@ -1,4 +1,4 @@
-package com.einstinford.fmview;
+package com.einstinford.fmview.deprecated;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -13,6 +13,8 @@ import android.graphics.Shader;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
+
+import com.einstinford.fmview.TangramViewMetrics;
 
 /**
  * Created by kk on 17-9-26.

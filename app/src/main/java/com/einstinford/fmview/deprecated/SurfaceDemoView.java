@@ -1,4 +1,4 @@
-package com.einstinford.fmview;
+package com.einstinford.fmview.deprecated;
 
 import android.content.Context;
 import android.util.AttributeSet;

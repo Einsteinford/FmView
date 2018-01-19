@@ -1,4 +1,4 @@
-package com.einstinford.fmview;
+package com.einstinford.fmview.deprecated;
 
 import android.animation.ObjectAnimator;
 import android.content.Context;
@@ -17,6 +17,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.OvershootInterpolator;
+
+import com.einstinford.fmview.R;
+import com.einstinford.fmview.TangramViewMetrics;
 
 import java.util.Arrays;
 import java.util.List;
